@@ -7,7 +7,7 @@ import { monkshu_component } from "/framework/js/monkshu_component.mjs";
 import { apimanager as apiman } from "/framework/js/apimanager.mjs";
 const getRandomString = async () => {
     let resp = await apiman.rest(APP_CONSTANTS.API_RANDOM, "POST", {},
-        true);
+        true); // {} is for sending information from frontend to backend 
     if (!resp.result) router.reload();
     app_random.shadowRoot.querySelector("#random").value =
         resp.results.random;
